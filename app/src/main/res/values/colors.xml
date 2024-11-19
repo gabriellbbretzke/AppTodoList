@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_main">#FFFFFF</color> <!-- Fundo principal branco suave -->
+    <color name="pastel_pink">#FFB6C1</color> <!-- Rosa pastel claro -->
+    <color name="mint_green">#98FF98</color> <!-- Verde menta claro -->
+    <color name="lemon_yellow">#FFFACD</color> <!-- Amarelo limão claro -->
+    <color name="button_color">#FFA07A</color> <!-- Cor vibrante para botões -->
+    <color name="text_color_primary">#333333</color> <!-- Cor do texto principal -->
+    <color name="input_background">#F5F5F5</color> <!-- Fundo de campos de entrada -->
+    <!-- res/values/colors.xml -->
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="digite_descricao_tarefa">Digite a descrição da sua tarefa aqui...</string>
+    <string name="example">Example</string>
+    <string name="starttime">StartTime</string>
+    <string name="edit">Edit</string>
+    <string name="todotitledetail">TodoTitleDetail</string>
+    <string name="save">Save</string>
+    <string name="bem_vindo">Bem-vindo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+</resources>
