@@ -10,5 +10,5 @@ public interface ITodoItemAppService
     public TodoItem GetById(Guid id);
     public TodoItem Create(CreateTodoItemRequest request);
     public TodoItem Update(UpdateTodoItemRequest request);
-    public IActionResult Delete(Guid id);
+    public bool Delete(Guid id);
 }

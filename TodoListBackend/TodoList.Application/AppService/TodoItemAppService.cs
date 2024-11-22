@@ -18,43 +18,49 @@ public class TodoItemAppService : ITodoItemAppService
         _unitOfWork = unitOfWork;
     }
 
-    public TodoItem Create(CreateTodoItemRequest request)
-    {
-        if (request == null)
-            return null;
-
-        var result = _todoItemRepository.Add(new TodoItem
-        {
-            Title = request.Title,
-            Description = request.Description,
-            IsCompleted = false,
-            CreatedAt = DateTime.Now
-        });
-
-        _unitOfWork.Commit();
-
-        return result;
-    }
-
-    public IActionResult Delete(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
     public List<TodoItem> GetAll()
     {
-        throw new NotImplementedException();
+        var result = _todoItemRepository.GetAll();
+        return result;
     }
 
     public TodoItem GetById(Guid id)
     {
         var result = _todoItemRepository.GetById(id);
+        return result;
+    }
+
+    public TodoItem Create(CreateTodoItemRequest request)
+    {
+        if (request == null)
+            return null;
+
+        var result = _todoItemRepository.Add(new TodoItem(request.Title, request.Description));
+        _unitOfWork.Commit();
 
         return result;
     }
 
     public TodoItem Update(UpdateTodoItemRequest request)
     {
-        throw new NotImplementedException();
+        var todoItemToUpdate = _todoItemRepository.GetById(request.Id);
+        todoItemToUpdate.Update(request.Title, request.Description, request.IsCompleted);
+        
+        _todoItemRepository.Update(todoItemToUpdate);
+        _unitOfWork.Commit();
+
+        return todoItemToUpdate;
+    }
+
+    public bool Delete(Guid id)
+    {
+        var todoItemToRemove = _todoItemRepository.GetById(id);
+        if (todoItemToRemove == null)
+            return false;
+
+        _todoItemRepository.Remove(todoItemToRemove);
+        _unitOfWork.Commit();
+
+        return true;
     }
 }

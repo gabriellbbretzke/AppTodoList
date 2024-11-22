@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\appservice\\todoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\appservice\\todoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C28D518-C6F1-4FE6-A4B1-6E3CB14FB436}|TodoList.Api\\TodoList.Api.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.api\\controllers\\todoitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C28D518-C6F1-4FE6-A4B1-6E3CB14FB436}|TodoList.Api\\TodoList.Api.csproj|solutionrelative:todolist.api\\controllers\\todoitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.domain\\entities\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|solutionrelative:todolist.domain\\entities\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74363B1E-8095-4CC8-924D-EA8E9D8FF0B8}|TodoList.Infrastructure\\TodoList.Infrastructure.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.infrastructure\\migrations\\20241121183033_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74363B1E-8095-4CC8-924D-EA8E9D8FF0B8}|TodoList.Infrastructure\\TodoList.Infrastructure.csproj|solutionrelative:todolist.infrastructure\\migrations\\20241121183033_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|solutionrelative:todolist.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74363B1E-8095-4CC8-924D-EA8E9D8FF0B8}|TodoList.Infrastructure\\TodoList.Infrastructure.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.infrastructure\\context\\todolistdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74363B1E-8095-4CC8-924D-EA8E9D8FF0B8}|TodoList.Infrastructure\\TodoList.Infrastructure.csproj|solutionrelative:todolist.infrastructure\\context\\todolistdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\request\\todoitem\\createtodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\request\\todoitem\\createtodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\appservice\\interface\\itodoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\appservice\\interface\\itodoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\request\\todoitem\\updatetodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\request\\todoitem\\updatetodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\appservice\\interface\\itodoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\appservice\\interface\\itodoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.domain\\entities\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED53E6AA-80B4-4047-9D14-9D689D579146}|TodoList.Domain\\TodoList.Domain.csproj|solutionrelative:todolist.domain\\entities\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\response\\todoitem\\deletetodoitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\response\\todoitem\\deletetodoitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\appservice\\todoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\appservice\\todoitemappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|c:\\projetos github\\apptodolist\\todolistbackend\\todolist.application\\request\\todoitem\\createtodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BEEDEAC-872B-4BC8-B5A1-00FF78FC2E8C}|TodoList.Application\\TodoList.Application.csproj|solutionrelative:todolist.application\\request\\todoitem\\createtodoitemrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,33 +70,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "TodoList.Domain\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "TodoList.Domain\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "20241121183033_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\Migrations\\20241121183033_InitialCreate.cs",
+              "RelativeDocumentMoniker": "TodoList.Infrastructure\\Migrations\\20241121183033_InitialCreate.cs",
+              "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\Migrations\\20241121183033_InitialCreate.cs",
+              "RelativeToolTip": "TodoList.Infrastructure\\Migrations\\20241121183033_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T19:36:56.582Z",
+              "WhenOpened": "2024-11-22T14:19:27.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "TodoListDbContext.cs",
+              "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\Context\\TodoListDbContext.cs",
+              "RelativeDocumentMoniker": "TodoList.Infrastructure\\Context\\TodoListDbContext.cs",
+              "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\Context\\TodoListDbContext.cs",
+              "RelativeToolTip": "TodoList.Infrastructure\\Context\\TodoListDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T14:07:12.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeleteTodoItemResponse.cs",
+              "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\Response\\TodoItem\\DeleteTodoItemResponse.cs",
+              "RelativeDocumentMoniker": "TodoList.Application\\Response\\TodoItem\\DeleteTodoItemResponse.cs",
+              "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\Response\\TodoItem\\DeleteTodoItemResponse.cs",
+              "RelativeToolTip": "TodoList.Application\\Response\\TodoItem\\DeleteTodoItemResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T13:55:27.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TodoItem.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\Entities\\TodoItem.cs",
               "RelativeDocumentMoniker": "TodoList.Domain\\Entities\\TodoItem.cs",
               "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\Entities\\TodoItem.cs",
               "RelativeToolTip": "TodoList.Domain\\Entities\\TodoItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T18:49:31.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "UpdateTodoItemRequest.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\Request\\TodoItem\\UpdateTodoItemRequest.cs",
               "RelativeDocumentMoniker": "TodoList.Application\\Request\\TodoItem\\UpdateTodoItemRequest.cs",
@@ -101,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "CreateTodoItemRequest.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\Request\\TodoItem\\CreateTodoItemRequest.cs",
               "RelativeDocumentMoniker": "TodoList.Application\\Request\\TodoItem\\CreateTodoItemRequest.cs",
@@ -114,39 +148,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TodoItemController.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Api\\Controllers\\TodoItemController.cs",
               "RelativeDocumentMoniker": "TodoList.Api\\Controllers\\TodoItemController.cs",
               "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Api\\Controllers\\TodoItemController.cs",
               "RelativeToolTip": "TodoList.Api\\Controllers\\TodoItemController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBUAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T18:37:34.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "TodoItemAppService.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\AppService\\TodoItemAppService.cs",
               "RelativeDocumentMoniker": "TodoList.Application\\AppService\\TodoItemAppService.cs",
               "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\AppService\\TodoItemAppService.cs",
               "RelativeToolTip": "TodoList.Application\\AppService\\TodoItemAppService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAwwC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T16:31:31.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ITodoItemAppService.cs",
               "DocumentMoniker": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\AppService\\Interface\\ITodoItemAppService.cs",
               "RelativeDocumentMoniker": "TodoList.Application\\AppService\\Interface\\ITodoItemAppService.cs",
               "ToolTip": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\AppService\\Interface\\ITodoItemAppService.cs",
               "RelativeToolTip": "TodoList.Application\\AppService\\Interface\\ITodoItemAppService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T16:28:12.105Z",
               "EditorCaption": ""

@@ -362,9 +362,9 @@
           "TodoList.Domain": "1.0.0"
         },
         "runtime": {
-          "TODOLIST.INFRASTRUCTURE.dll": {
+          "TodoList.Infrastructure.dll": {
             "assemblyVersion": "1.0.0",
-            "fileVersion": ""
+            "fileVersion": "1.0.0.0"
           }
         }
       }

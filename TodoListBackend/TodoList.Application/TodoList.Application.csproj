@@ -14,8 +14,4 @@
     <ProjectReference Include="..\TodoList.Domain\TodoList.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Response\TodoItem\" />
-  </ItemGroup>
-
 </Project>

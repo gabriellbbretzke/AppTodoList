@@ -52,6 +52,6 @@ public class TodoItemController : ControllerBase
     public ActionResult Delete(Guid id)
     {
         var result = _todoItemAppService.Delete(id);
-        return result == null ? NotFound() : Ok(id);
+        return result ? Ok(id) : NotFound();
     }
 }
