@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "uQfzC40jK70aYMPIEPfQSQizVTnt+zrfft49S3SjYZw=",
+  "Source": "TodoListBackend",
+  "BasePath": "_content/TodoListBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
