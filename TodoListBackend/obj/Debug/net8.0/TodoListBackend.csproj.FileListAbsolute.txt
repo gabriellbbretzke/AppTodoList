@@ -1,0 +1,8 @@
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.csproj.AssemblyReference.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.AssemblyInfoInputs.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.AssemblyInfo.cs
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.csproj.CoreCompileInputs.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\obj\Debug\net8.0\TodoListBackend.sourcelink.json

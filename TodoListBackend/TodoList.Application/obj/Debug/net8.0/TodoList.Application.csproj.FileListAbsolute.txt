@@ -1,0 +1,12 @@
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\bin\Debug\net8.0\TodoList.Application.deps.json
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\bin\Debug\net8.0\TodoList.Application.dll
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\bin\Debug\net8.0\TodoList.Application.pdb
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.AssemblyInfoInputs.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.AssemblyInfo.cs
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.csproj.CoreCompileInputs.cache
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.sourcelink.json
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.dll
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\refint\TodoList.Application.dll
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\TodoList.Application.pdb
+C:\Projetos Github\AppTodoList\TodoListBackend\TodoList.Application\obj\Debug\net8.0\ref\TodoList.Application.dll
