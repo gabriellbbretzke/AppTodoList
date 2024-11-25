@@ -1,4 +1,4 @@
-package com.example.todolist
+package com.todolist
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -12,9 +12,12 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todolist.R
+import com.todolist.data.model.TodoItem
+import com.todolist.ui.detail.DetailActivity
 
 class TodoAdapter(
-    val todos: MutableList<Todo>
+    val todos: MutableList<TodoItem>
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -32,14 +35,9 @@ class TodoAdapter(
         return TodoViewHolder(itemView)
     }
 
-    fun addTodo(todo: Todo){
-        todos.add(todo)
-        notifyItemInserted(todos.size - 1)
-    }
-
     fun deleteDoneTodos(recyclerView: RecyclerView) {
         for (i in todos.size - 1 downTo 0) {
-            if (todos[i].isChecked) {
+            if (todos[i].isCompleted) {
                 val viewHolder = recyclerView.findViewHolderForAdapterPosition(i)
                 viewHolder?.let {
                     val anim = ObjectAnimator.ofFloat(
@@ -72,6 +70,7 @@ class TodoAdapter(
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val curTodo = todos[position]
         holder.tvTodoTitle.text = curTodo.title
+        holder.cbDone.isChecked = curTodo.isCompleted
 
         val anim = ObjectAnimator.ofFloat(holder.itemView, "alpha", 0f, 1f)
         anim.duration = 500
@@ -79,14 +78,14 @@ class TodoAdapter(
 
         // Bind data to the views in the ViewHolder
         holder.tvTodoTitle.text = curTodo.title
-        holder.cbDone.isChecked = curTodo.isChecked
+        holder.cbDone.isChecked = curTodo.isCompleted
 
-        toggleStrikeThrough(holder.tvTodoTitle, curTodo.isChecked)
+        toggleStrikeThrough(holder.tvTodoTitle, curTodo.isCompleted)
 
         // Set a listener on the CheckBox to handle the strike-through
-        holder.cbDone.setOnCheckedChangeListener { _, isChecked ->
-            toggleStrikeThrough(holder.tvTodoTitle, isChecked)
-            curTodo.isChecked = isChecked
+        holder.cbDone.setOnCheckedChangeListener { _, isCompleted ->
+            toggleStrikeThrough(holder.tvTodoTitle, isCompleted)
+            curTodo.isCompleted = isCompleted
         }
 
         // Configurar o clique do botão de edição
@@ -96,9 +95,17 @@ class TodoAdapter(
             intent.putExtra("TASK_TITLE", curTodo.title)  // Use curTodo.title aqui
             context.startActivity(intent)
         }
+
+        //holder.cbDone.setOnClickListener {
+        //    onDeleteClicked(curTodo.id)
+        //}
     }
 
-    override fun getItemCount(): Int {
-        return todos.size
+    fun updateTodos(newTodos: List<TodoItem>) {
+        todos.clear()
+        todos.addAll(newTodos)
+        notifyDataSetChanged()
     }
+
+    override fun getItemCount(): Int = todos.size
 }

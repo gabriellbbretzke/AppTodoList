@@ -1,4 +1,4 @@
-package com.example.todolist
+package com.todolist.ui.main
 
 import android.content.Intent
 import android.graphics.Canvas
@@ -8,26 +8,35 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todolist.R
+import com.todolist.ui.login.LoginActivity
+import com.todolist.TodoAdapter
+import com.todolist.data.model.TodoItem
+import com.todolist.data.repository.TodoRepository
+import com.todolist.ui.viewmodel.TodoViewModel
+import com.todolist.ui.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var todoAdapter: TodoAdapter
+    private val viewModel: TodoViewModel by viewModels {
+        ViewModelFactory(TodoRepository())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Verifica se o usuário está autenticado
         val sharedPref = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val isLoggedIn = sharedPref.getBoolean("is_logged_in", false)
 
         if (!isLoggedIn) {
-            // Redireciona para LoginActivity se não estiver autenticado
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
@@ -35,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         setContentView(R.layout.activity_main)
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
         val rvTodoItems = findViewById<RecyclerView>(R.id.rvTodoItems)
@@ -51,23 +59,33 @@ class MainActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(rvTodoItems)
 
+        // Observe todos LiveData
+        viewModel.todos.observe(this) { todoList ->
+            todoAdapter.updateTodos(todoList) // Update the adapter when data changes
+        }
+
+        viewModel.fetchTodos()
+
         btnAddTodo.setOnClickListener{
             val todoTitle = etTodoTile.text.toString()
             if(todoTitle.isNotEmpty()) {
-                val itemExists = todoAdapter.todos.any { it.title.equals(todoTitle, ignoreCase = true) }
-
-                if (itemExists) {
-                    Toast.makeText(this, "Item já existe na lista", Toast.LENGTH_SHORT).show()
-                } else {
-                    val todo = Todo(todoTitle)
-                    todoAdapter.addTodo(todo)
-                    etTodoTile.text.clear()
-                }
+                viewModel.createTodo(TodoItem(todoTitle))
             }
         }
 
         btnDeleteDoneTodos.setOnClickListener{
-            todoAdapter.deleteDoneTodos(rvTodoItems)
+            val doneTodos = viewModel.todos.value?.filter { it.isCompleted } ?: emptyList()
+
+            if (doneTodos.isNotEmpty()){
+                doneTodos.forEach { todoItem ->
+                    viewModel.deleteTodoItem(todoItem.id.toString())
+                }
+            }
+
+            // Observa mudanças para atualizar a RecyclerView automaticamente
+            viewModel.todos.observe(this) { updatedTodos ->
+                todoAdapter.updateTodos(updatedTodos)
+            }
         }
     }
 
