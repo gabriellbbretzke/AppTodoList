@@ -47,11 +47,9 @@ class TodoAdapter(
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val curTodo = todos[position]
         holder.tvTodoTitle.text = curTodo.title
+        // Remove listener antigo antes de atualizar o estado do checkbox
+        holder.cbDone.setOnCheckedChangeListener(null)
         holder.cbDone.isChecked = curTodo.isCompleted
-
-        val anim = ObjectAnimator.ofFloat(holder.itemView, "alpha", 0f, 1f)
-        anim.duration = 500
-        anim.start()
 
         holder.tvTodoTitle.text = curTodo.title
         holder.cbDone.isChecked = curTodo.isCompleted
@@ -64,10 +62,13 @@ class TodoAdapter(
             onTodoUpdated(curTodo)
         }
 
+        val anim = ObjectAnimator.ofFloat(holder.itemView, "alpha", 0f, 1f)
+        anim.duration = 500
+        anim.start()
+
         holder.btnEdit.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetailActivity::class.java)
-//            intent.putExtra("TASK_TITLE", curTodo.title)
             intent.putExtra("TASK_ID", curTodo.id)
             context.startActivity(intent)
         }
