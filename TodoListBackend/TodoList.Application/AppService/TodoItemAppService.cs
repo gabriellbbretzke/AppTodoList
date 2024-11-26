@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.TodoItem;
+using TodoList.Application.Response.TodoItem;
 using TodoList.Domain.Entities;
 using TodoList.Domain.Interfaces;
 using TodoList.Domain.Interfaces.Repositories;
@@ -52,15 +53,15 @@ public class TodoItemAppService : ITodoItemAppService
         return todoItemToUpdate;
     }
 
-    public bool Delete(Guid id)
+    public DeleteTodoItemResponse Delete(Guid id)
     {
         var todoItemToRemove = _todoItemRepository.GetById(id);
         if (todoItemToRemove == null)
-            return false;
+            return new DeleteTodoItemResponse() { Message = $"Todo item not found Id = {id}", Success = false };
 
         _todoItemRepository.Remove(todoItemToRemove);
         _unitOfWork.Commit();
 
-        return true;
+        return new DeleteTodoItemResponse() { Message = $"Todo item deleted successfully ID = {id}", Success = true };
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.TodoItem;
+using TodoList.Application.Response.TodoItem;
 using TodoList.Domain.Entities;
 
 namespace TodoList.Api.Controllers;
@@ -49,9 +50,9 @@ public class TodoItemController : ControllerBase
     }
 
     [HttpDelete]
-    public ActionResult Delete(Guid id)
+    public IActionResult Delete([FromQuery] Guid id)
     {
         var result = _todoItemAppService.Delete(id);
-        return result ? Ok(id) : NotFound();
+        return result.Success ? Ok(result) : NotFound(result);
     }
 }
