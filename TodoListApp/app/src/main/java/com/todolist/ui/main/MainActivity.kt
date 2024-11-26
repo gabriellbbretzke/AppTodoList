@@ -51,7 +51,9 @@ class MainActivity : AppCompatActivity() {
         val btnDeleteDoneTodos = findViewById<ImageButton>(R.id.btnDeleteDoneTodos)
         val etTodoTile = findViewById<EditText>(R.id.etTodoTitle)
 
-        todoAdapter = TodoAdapter(mutableListOf())
+        todoAdapter = TodoAdapter(mutableListOf()){ updatedTodo ->
+            viewModel.updateTodo(updatedTodo)
+        }
         rvTodoItems.adapter = todoAdapter
         rvTodoItems.layoutManager = LinearLayoutManager(this)
         rvTodoItems.itemAnimator = DefaultItemAnimator()
@@ -82,7 +84,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            // Observa mudanças para atualizar a RecyclerView automaticamente
             viewModel.todos.observe(this) { updatedTodos ->
                 todoAdapter.updateTodos(updatedTodos)
             }

@@ -51,6 +51,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.3") // OkHttp version
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3") // OkHttp logging interceptor
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation(libs.androidx.lifecycle.viewmodel.android)
 
 
     testImplementation(libs.junit)

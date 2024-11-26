@@ -17,7 +17,8 @@ import com.todolist.data.model.TodoItem
 import com.todolist.ui.detail.DetailActivity
 
 class TodoAdapter(
-    val todos: MutableList<TodoItem>
+    val todos: MutableList<TodoItem>,
+    private val onTodoUpdated: (TodoItem) -> Unit
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,30 +34,6 @@ class TodoAdapter(
             false
         )
         return TodoViewHolder(itemView)
-    }
-
-    fun deleteDoneTodos(recyclerView: RecyclerView) {
-        for (i in todos.size - 1 downTo 0) {
-            if (todos[i].isCompleted) {
-                val viewHolder = recyclerView.findViewHolderForAdapterPosition(i)
-                viewHolder?.let {
-                    val anim = ObjectAnimator.ofFloat(
-                        it.itemView,
-                        "alpha",
-                        1f,
-                        0f
-                    )
-                    anim.duration = 300
-                    anim.addListener(object : AnimatorListenerAdapter() {
-                        override fun onAnimationEnd(animation: Animator) {
-                            todos.removeAt(i)
-                            notifyItemRemoved(i)
-                        }
-                    })
-                    anim.start()
-                }
-            }
-        }
     }
 
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean) {
@@ -76,29 +53,24 @@ class TodoAdapter(
         anim.duration = 500
         anim.start()
 
-        // Bind data to the views in the ViewHolder
         holder.tvTodoTitle.text = curTodo.title
         holder.cbDone.isChecked = curTodo.isCompleted
 
         toggleStrikeThrough(holder.tvTodoTitle, curTodo.isCompleted)
 
-        // Set a listener on the CheckBox to handle the strike-through
         holder.cbDone.setOnCheckedChangeListener { _, isCompleted ->
             toggleStrikeThrough(holder.tvTodoTitle, isCompleted)
             curTodo.isCompleted = isCompleted
+            onTodoUpdated(curTodo)
         }
 
-        // Configurar o clique do botão de edição
         holder.btnEdit.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("TASK_TITLE", curTodo.title)  // Use curTodo.title aqui
+//            intent.putExtra("TASK_TITLE", curTodo.title)
+            intent.putExtra("TASK_ID", curTodo.id)
             context.startActivity(intent)
         }
-
-        //holder.cbDone.setOnClickListener {
-        //    onDeleteClicked(curTodo.id)
-        //}
     }
 
     fun updateTodos(newTodos: List<TodoItem>) {
