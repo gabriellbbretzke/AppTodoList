@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.TodoItem;
-using TodoList.Application.Response.TodoItem;
 using TodoList.Domain.Entities;
 
 namespace TodoList.Api.Controllers;

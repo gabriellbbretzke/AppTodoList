@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TodoList.Application.AppService;
@@ -14,21 +15,10 @@ public static class DependencyInjection
 {
     public static void AddConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
-        //services.AddHttpContextAccessor();
-        //services.AddSingleton<Migrator>();
-        //services.AddSingleton<MigratorInitialData>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-        //services.AddScoped<INotifier, Notifier>();
-        //services.AddScoped<ILoggedUser, LoggedUser>();
-        //services.AddAutoMapperFromAssemblyContaining<IApplicationAssemblyMarker>();
-        //services.AddValidatorsFromAssemblyContaining<IApplicationAssemblyMarker>();
         services.AddAppServices();
-        //services.AddServices();
         services.AddRepositories();
-        //services.AddHttpClients();
         services.AddDbContext(configuration);
-        //services.AddAppSettings(configuration);
-        //services.AddBlobService(configuration);
     }
 
     private static void AddAppServices(this IServiceCollection services)

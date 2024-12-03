@@ -1,30 +1,48 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Reflection.Emit;
 using TodoList.Domain.Entities;
 
-namespace TodoList.Infrastructure.Context
+namespace TodoList.Infrastructure.Context;
+
+public class TodoListDbContext : IdentityDbContext
 {
-    public class TodoListDbContext(DbContextOptions<TodoListDbContext> options) : DbContext(options)
+    public TodoListDbContext(DbContextOptions<TodoListDbContext> options)
+        : base(options) { }
+
+    public DbSet<TodoItem> TodoItem { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
     {
-        public DbSet<TodoItem> TodoItem { get; set; }
+        base.OnModelCreating(builder);
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        RenameTablesFromIdentity(builder);
+
+        SetDefaultTypes(builder);
+
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
+
+    private void RenameTablesFromIdentity(ModelBuilder builder)
+    {
+        builder.Entity<IdentityUser>(b => { b.ToTable("User"); }); 
+        builder.Entity<IdentityRole>(b => { b.ToTable("Role"); }); 
+        builder.Entity<IdentityUserRole<string>>(b => { b.ToTable("UserRole"); });
+        builder.Entity<IdentityUserClaim<string>>(b => { b.ToTable("UserClaim"); });
+        builder.Entity<IdentityUserLogin<string>>(b => { b.ToTable("UserLogin"); });
+        builder.Entity<IdentityRoleClaim<string>>(b => { b.ToTable("RoleClaim"); });
+        builder.Entity<IdentityUserToken<string>>(b => { b.ToTable("UserToken"); });
+    }
+
+    private static void SetDefaultTypes(ModelBuilder builder)
+    {
+        foreach (var property in builder.Model.GetEntityTypes()
+                     .SelectMany(t => t.GetProperties())
+                     .Where(p => p.ClrType == typeof(DateTime) || p.ClrType == typeof(DateTime?)))
         {
-            base.OnModelCreating(builder);
-
-            SetDefaultTypes(builder);
-
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
-
-        private static void SetDefaultTypes(ModelBuilder builder)
-        {
-            foreach (var property in builder.Model.GetEntityTypes()
-                         .SelectMany(t => t.GetProperties())
-                         .Where(p => p.ClrType == typeof(DateTime) || p.ClrType == typeof(DateTime?)))
-            {
-                property.SetColumnType("timestamp without time zone");
-            }
+            property.SetColumnType("timestamp without time zone");
         }
     }
 }
