@@ -7,7 +7,7 @@ using TodoList.Domain.Entities;
 
 namespace TodoList.Infrastructure.Context;
 
-public class TodoListDbContext : IdentityDbContext
+public class TodoListDbContext : IdentityDbContext<IdentityUser>
 {
     public TodoListDbContext(DbContextOptions<TodoListDbContext> options)
         : base(options) { }

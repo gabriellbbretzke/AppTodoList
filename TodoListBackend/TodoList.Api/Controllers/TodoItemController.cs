@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.TodoItem;
 using TodoList.Domain.Entities;
@@ -17,12 +18,14 @@ public class TodoItemController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize]
     public ActionResult<List<TodoItem>> GetAll()
     {
         return Ok(_todoItemAppService.GetAll());
     }
 
     [HttpGet("{id}")]
+    [Authorize]
     public ActionResult<TodoItem> GetById(Guid id)
     {
         var result = _todoItemAppService.GetById(id);
@@ -30,6 +33,7 @@ public class TodoItemController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public ActionResult<TodoItem> Create(CreateTodoItemRequest request)
     {
         if (request == null)
@@ -42,6 +46,7 @@ public class TodoItemController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize]
     public ActionResult<TodoItem> Update(UpdateTodoItemRequest request)
     {
         var result = _todoItemAppService.Update(request);
@@ -49,6 +54,7 @@ public class TodoItemController : ControllerBase
     }
 
     [HttpDelete]
+    [Authorize]
     public IActionResult Delete([FromQuery] Guid id)
     {
         var result = _todoItemAppService.Delete(id);

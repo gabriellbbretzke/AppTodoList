@@ -7,3 +7,4 @@ EF Migrations:
 dotnet ef migrations add InitialCreate -p TodoList.Infrastructure -s TodoList.Api
 dotnet ef migrations add InitialIdentitySetup -p TodoList.Infrastructure -s TodoList.Api
 dotnet ef migrations add RenameIdentityTables -p TodoList.Infrastructure -s TodoList.Api
+dotnet ef migrations add UpdateIdentityConfiguration -p TodoList.Infrastructure -s TodoList.Api
