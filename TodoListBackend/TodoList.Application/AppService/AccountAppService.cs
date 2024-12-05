@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -7,16 +8,19 @@ using System.Text;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.Account;
 using TodoList.Application.Response.Account;
+using TodoList.Infrastructure.IoC.Configuration;
 
 namespace TodoList.Application.AppService
 {
     public class AccountAppService : IAccountAppService
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly JwtSettings _jwtSettings;
 
-        public AccountAppService(UserManager<IdentityUser> userManager) 
+        public AccountAppService(UserManager<IdentityUser> userManager, IOptions<JwtSettings> jwtSettings) 
         {
             _userManager = userManager;
+            _jwtSettings = jwtSettings.Value;
         }
 
         public async Task<CreateAccountResponse> CreateUserAsync(CreateAccountRequest request)
@@ -70,12 +74,12 @@ namespace TodoList.Application.AppService
                 new Claim(ClaimTypes.Name, user.UserName)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSecretKey12345")); // Use um segredo seguro
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "TodoListBackend",
-                audience: "TodoListApp",
+                issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
                 claims: claims,
                 expires: DateTime.UtcNow.AddHours(2),
                 signingCredentials: creds);

@@ -10,6 +10,7 @@ using TodoList.Application.AppService.Interface;
 using TodoList.Domain.Interfaces;
 using TodoList.Domain.Interfaces.Repositories;
 using TodoList.Infrastructure.Context;
+using TodoList.Infrastructure.IoC.Configuration;
 using TodoList.Infrastructure.Repositories;
 
 namespace TodoList.Infrastructure.IoC;
@@ -22,7 +23,8 @@ public static class DependencyInjection
         services.AddAppServices();
         services.AddRepositories();
         services.AddDbContext(configuration);
-        services.AddIdentityConfiguration();
+        services.AddIdentityConfiguration(configuration);
+        services.AddConfigurationJwtSettings(configuration);
     }
 
     private static void AddAppServices(this IServiceCollection services)
@@ -45,8 +47,15 @@ public static class DependencyInjection
         });
     }
 
-    private static void AddIdentityConfiguration(this IServiceCollection services)
+    private static void AddConfigurationJwtSettings(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
+    }
+
+    private static void AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
+    {
+        var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
+
         services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<TodoListDbContext>()
             .AddDefaultTokenProviders();
@@ -60,9 +69,9 @@ public static class DependencyInjection
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "TodoListBackend",
-                    ValidAudience = "TodoListApp",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSecretKey12345"))
+                    ValidIssuer = jwtSettings.Issuer,
+                    ValidAudience = jwtSettings.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
                 };
             });
 

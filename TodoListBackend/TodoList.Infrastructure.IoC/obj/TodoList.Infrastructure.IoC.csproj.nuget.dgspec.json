@@ -34,6 +34,9 @@
             "projectReferences": {
               "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\TodoList.Domain.csproj": {
                 "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\TodoList.Domain.csproj"
+              },
+              "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj": {
+                "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj"
               }
             }
           }
@@ -54,6 +57,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -87,6 +94,85 @@
         "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\TodoList.Domain.csproj",
         "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
         "outputPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lyncas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj",
+        "projectName": "TodoList.Infrastructure.Core",
+        "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj",
+        "packagesPath": "C:\\Users\\Lyncas\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -175,6 +261,9 @@
               "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\TodoList.Application.csproj": {
                 "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Application\\TodoList.Application.csproj"
               },
+              "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj": {
+                "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure.Core\\TodoList.Infrastructure.Core.csproj"
+              },
               "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\TodoList.Infrastructure.csproj": {
                 "projectPath": "C:\\Projetos Github\\AppTodoList\\TodoListBackend\\TodoList.Infrastructure\\TodoList.Infrastructure.csproj"
               }
@@ -199,11 +288,19 @@
           "dependencies": {
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.8.1, )"
+              "version": "[11.11.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -288,6 +385,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"

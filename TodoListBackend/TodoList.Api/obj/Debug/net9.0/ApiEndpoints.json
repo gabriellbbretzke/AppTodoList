@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "TodoList.Api.Controllers.AccountController",
+    "Method": "CreateUser",
+    "RelativePath": "api/Account/create-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "TodoList.Application.Request.Account.CreateAccountRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TodoList.Api.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Microsoft.AspNetCore.Identity.Data.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TodoList.Api.Controllers.TodoItemController",
     "Method": "GetAll",
     "RelativePath": "api/TodoItem",
