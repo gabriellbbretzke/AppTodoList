@@ -16,6 +16,10 @@ obj/
 *.cache
 *.deps.json
 *.editorconfig
+*.deps.json
+*.sourcelink.json
+*.Api.json
+*.ApiEndpoints.json
 
 # User-specific files
 *.suo
