@@ -15,6 +15,7 @@ obj/
 *.dll
 *.cache
 *.deps.json
+*.editorconfig
 
 # User-specific files
 *.suo
