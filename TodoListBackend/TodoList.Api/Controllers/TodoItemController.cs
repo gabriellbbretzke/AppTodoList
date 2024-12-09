@@ -21,7 +21,8 @@ public class TodoItemController : ControllerBase
     [Authorize]
     public ActionResult<List<TodoItem>> GetAll()
     {
-        return Ok(_todoItemAppService.GetAll());
+        var result = _todoItemAppService.GetAll();
+        return result == null ? NotFound() : Ok(result);
     }
 
     [HttpGet("{id}")]

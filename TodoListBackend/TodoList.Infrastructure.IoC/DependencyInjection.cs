@@ -23,8 +23,6 @@ public static class DependencyInjection
         services.AddAppServices();
         services.AddRepositories();
         services.AddDbContext(configuration);
-        services.AddIdentityConfiguration(configuration);
-        services.AddConfigurationJwtSettings(configuration);
     }
 
     private static void AddAppServices(this IServiceCollection services)
@@ -44,49 +42,6 @@ public static class DependencyInjection
         {
             options.UseNpgsql(configuration.GetConnectionString("TodoListDb"));
             options.EnableSensitiveDataLogging();
-        });
-    }
-
-    private static void AddConfigurationJwtSettings(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
-    }
-
-    private static void AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
-    {
-        var jwtSettings = configuration.GetSection("JwtSettings").Get<JwtSettings>();
-
-        services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddEntityFrameworkStores<TodoListDbContext>()
-            .AddDefaultTokenProviders();
-
-        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidAudience = jwtSettings.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
-                };
-            });
-
-        services.Configure<IdentityOptions>(options =>
-        {
-            options.Password.RequireDigit = true;
-            options.Password.RequireLowercase = true;
-            options.Password.RequireUppercase = true;
-            options.Password.RequireNonAlphanumeric = false;
-            options.Password.RequiredLength = 6;
-
-            options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            options.Lockout.MaxFailedAccessAttempts = 5;
-
-            options.User.RequireUniqueEmail = true;
         });
     }
 }
