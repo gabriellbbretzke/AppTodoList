@@ -7,7 +7,9 @@ using TodoList.Domain.Entities;
 namespace TodoList.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[AllowAnonymous]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class TodoItemController : ControllerBase
 {
     private readonly ITodoItemAppService _todoItemAppService;

@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity.Data;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.Account;
-using TodoList.Application.Response.Account;
 
 namespace TodoList.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[AllowAnonymous]
+[Route("api/v{version:apiVersion}/[controller]")]
 public class AccountController : ControllerBase
 {
     private readonly IAccountAppService _accountAppService;
