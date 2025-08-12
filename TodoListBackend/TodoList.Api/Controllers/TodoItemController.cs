@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TodoList.Application.AppService.Interface;
 using TodoList.Application.Request.TodoItem;
@@ -8,7 +9,6 @@ namespace TodoList.Api.Controllers;
 
 [ApiController]
 [ApiVersion("1.0")]
-[AllowAnonymous]
 [Route("api/v{version:apiVersion}/[controller]")]
 public class TodoItemController : ControllerBase
 {

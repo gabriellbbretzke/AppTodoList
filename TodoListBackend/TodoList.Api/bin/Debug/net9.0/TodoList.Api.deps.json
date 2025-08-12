@@ -1566,9 +1566,9 @@
           "TodoList.Infrastructure.Core": "1.0.0"
         },
         "runtime": {
-          "TODOLIST.APPLICATION.dll": {
+          "TodoList.Application.dll": {
             "assemblyVersion": "1.0.0",
-            "fileVersion": ""
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1579,9 +1579,9 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0"
         },
         "runtime": {
-          "TodoList.Domain.dll": {
+          "TODOLIST.DOMAIN.dll": {
             "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
+            "fileVersion": ""
           }
         }
       },

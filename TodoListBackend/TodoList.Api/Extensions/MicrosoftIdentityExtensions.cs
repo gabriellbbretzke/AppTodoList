@@ -23,7 +23,12 @@ public static class MicrosoftIdentityExtensions
             .AddEntityFrameworkStores<TodoListDbContext>()
             .AddDefaultTokenProviders();
 
-        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
             .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -57,9 +62,8 @@ public static class MicrosoftIdentityExtensions
     private static async Task HandleJwtBearerChallenge(JwtBearerChallengeContext context)
     {
         context.HandleResponse();
-
         context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-
+        
         var problemDetails = new ProblemDetails
         {
             Status = StatusCodes.Status401Unauthorized,

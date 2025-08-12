@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Account/create-user": {
+    "/api/v1/Account/create-user": {
       "post": {
         "tags": [
           "Account"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/api/Account/login": {
+    "/api/v1/Account/login": {
       "post": {
         "tags": [
           "Account"
@@ -67,7 +67,7 @@
         }
       }
     },
-    "/api/TodoItem": {
+    "/api/v1/TodoItem": {
       "get": {
         "tags": [
           "TodoItem"
@@ -217,7 +217,7 @@
         }
       }
     },
-    "/api/TodoItem/{id}": {
+    "/api/v1/TodoItem/{id}": {
       "get": {
         "tags": [
           "TodoItem"
@@ -370,6 +370,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please insert JWT with Bearer into field",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
